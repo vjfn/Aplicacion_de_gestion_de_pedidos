@@ -1,14 +1,87 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="com.example.aplicacion_de_gestion_de_pedidos.Login"
-            prefHeight="400.0" prefWidth="600.0">
-
-</AnchorPane>
+<BorderPane id="contenedor" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.aplicacion_de_gestion_de_pedidos.LoginController">
+    <center>
+        <VBox id="#contenedorLogin" alignment="CENTER" prefHeight="527.0" prefWidth="657.0" BorderPane.alignment="CENTER">
+            <children>
+                <HBox alignment="CENTER">
+                    <children>
+                        <Label id="labelBienvenida" alignment="CENTER" text="Bienvenido!" />
+                    </children>
+                </HBox>
+                <Label id="loginUser" text="Usuario:">
+                    <VBox.margin>
+                        <Insets bottom="10.0" />
+                    </VBox.margin>
+                    <font>
+                        <Font size="18.0" />
+                    </font>
+                    <effect>
+                        <DropShadow height="47.02" radius="23.1" width="47.38">
+                            <color>
+                                <Color red="0.7098039388656616" green="0.6941176652908325" blue="0.6941176652908325" />
+                            </color>
+                        </DropShadow>
+                    </effect>
+                </Label>
+                <TextField fx:id="userField">
+                    <VBox.margin>
+                        <Insets bottom="30.0" left="175.0" right="175.0" />
+                    </VBox.margin>
+                </TextField>
+                <Label id="loginPassword" text="Contraseña:">
+                    <VBox.margin>
+                        <Insets bottom="10.0" />
+                    </VBox.margin>
+                    <font>
+                        <Font size="18.0" />
+                    </font>
+                    <effect>
+                        <DropShadow height="47.02" radius="23.1" width="47.38">
+                            <color>
+                                <Color red="0.7098039388656616" green="0.6941176652908325" blue="0.6941176652908325" />
+                            </color>
+                        </DropShadow>
+                    </effect>
+                </Label>
+                <PasswordField fx:id="passField">
+                    <VBox.margin>
+                        <Insets bottom="50.0" left="175.0" right="175.0" />
+                    </VBox.margin>
+                </PasswordField>
+                <Button id="#button" fx:id="btnLogin" mnemonicParsing="false" onAction="#login" prefHeight="40.0" prefWidth="121.0" text="Iniciar Sesión">
+                    <font>
+                        <Font size="16.0" />
+                    </font>
+                    <VBox.margin>
+                        <Insets bottom="50.0" />
+                    </VBox.margin>
+                </Button>
+            </children>
+        </VBox>
+    </center>
+   <left>
+      <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label text="No tienes cuenta? Registrate" />
+            <Label text="Nuevo Usuario" />
+            <TextField fx:id="registerUserField" />
+            <Label text="Contraseña" />
+            <PasswordField fx:id="registerPasswordField" />
+            <Button fx:id="btnRegister" mnemonicParsing="false" onAction="#register" text="Registrarse!" />
+         </children>
+      </VBox>
+   </left>
+</BorderPane>
