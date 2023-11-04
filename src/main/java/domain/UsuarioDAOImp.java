@@ -2,10 +2,7 @@ package domain;
 
 import clase.Usuario;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.*;
 
 public class UsuarioDAOImp implements UsuarioDAO{
 
@@ -45,7 +42,35 @@ public class UsuarioDAOImp implements UsuarioDAO{
     @Override
     public Usuario createUser(String mail, String password) {
         Usuario usuario = new Usuario();
+        try {
+            PreparedStatement pS = connection.prepareStatement(loadUserSQL);
+            pS.setString(1, mail);
 
+            ResultSet loadedUser = pS.executeQuery();
+
+            if (loadedUser.next()) {
+                throw new RuntimeException("Usuario existe.");
+            }
+
+            PreparedStatement pSNewUser = connection.prepareStatement(createUserSQL, Statement.RETURN_GENERATED_KEYS);
+            pSNewUser.setString(1,mail);
+            pSNewUser.setString(2,password);
+            pSNewUser.setString(3,mail);
+
+            int affectedRows = pSNewUser.executeUpdate();
+
+            ResultSet createdUserID = pSNewUser.getGeneratedKeys();
+
+            if (createdUserID.next()) {
+                usuario.setId(createdUserID.getInt(1));
+                usuario.setMail(mail);
+                usuario.setName(mail);
+                usuario.setPassword(password);
+            }
+
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
         return usuario;
     }
 }

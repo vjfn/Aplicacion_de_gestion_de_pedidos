@@ -55,5 +55,17 @@ public class LoginController implements Initializable {
 
     @FXML
     public void register(ActionEvent actionEvent) {
+        String userMail = registerUserField.getText();
+        String userPassword = registerPasswordField.getText();
+
+        UsuarioDAOImp usuarioRegister = new UsuarioDAOImp(DBConnection.getConnection());
+
+        try{
+            Usuario usuario = usuarioRegister.createUser(userMail,userPassword);
+
+            throw new RuntimeException("ÉXITO CREADO");
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
     }
 }
