@@ -10,11 +10,15 @@ import java.io.IOException;
 public class MainApplication extends Application {
 
     private static Stage myStage;
+
+    private static Integer widht = 860;
+
+    private static Integer height = 640;
     @Override
     public void start(Stage stage) throws IOException {
         myStage = stage;
         FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource("login.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 820, 640);
+        Scene scene = new Scene(fxmlLoader.load(), widht, height);
         stage.setTitle("Login");
         stage.setScene(scene);
         stage.show();
@@ -23,7 +27,7 @@ public class MainApplication extends Application {
     public static void loadDahsboard() {
         try {
             FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource("dashboard.fxml"));
-            Scene scene = new Scene(fxmlLoader.load(), 900, 800);
+            Scene scene = new Scene(fxmlLoader.load(), widht, height);
             myStage.setTitle("Dashboard");
             myStage.setScene(scene);
         } catch (IOException e) {
@@ -34,12 +38,25 @@ public class MainApplication extends Application {
     public static void loadOrderDetail() {
         try {
             FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource("orderDetail.fxml"));
-            Scene scene = new Scene(fxmlLoader.load(), 900, 800);
+            Scene scene = new Scene(fxmlLoader.load(), widht, height);
             myStage.setTitle("Order Detail");
             myStage.setScene(scene);
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
+    }
+
+    public static void returnLogin(){
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource("login.fxml"));
+            Scene scene = new Scene(fxmlLoader.load(), widht, height);
+            myStage.setTitle("Login");
+            myStage.setScene(scene);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+
+
     }
 
     public static void main(String[] args) {

@@ -12,18 +12,18 @@ import java.util.ArrayList;
 public class ItemDAOImp implements ItemDAO{
 
     private static Connection connection;
-    private final static String queryLoadAll = "select * from Item where codigo_pedido = ?";
+    private final static String queryLoadAll = "select * from lineapedido where pedido_id = ?";
     public ItemDAOImp(Connection conn) {
         connection = conn;
     }
     @Override
-    public ArrayList<Item> loadAll(String codigoPedido) {
+    public ArrayList<Item> loadAll(Integer codigoPedido) {
         //Se crea un ArryList de 'Item', 'salida', donde se cargarán cada uno de los items.
         ArrayList<Item> salida = new ArrayList<>();
         try {
             //Se prepara y ejecuta la consulta.
             PreparedStatement preparedStatement = connection.prepareStatement(queryLoadAll);
-            preparedStatement.setString(1, codigoPedido);
+            preparedStatement.setInt(1, codigoPedido);
             ResultSet resultSet = preparedStatement.executeQuery();
 
             //Por cada resultado de la consulta se crea un objeto 'Item'.
@@ -32,12 +32,14 @@ public class ItemDAOImp implements ItemDAO{
                 item.setId(resultSet.getInt("id"));
                 item.setPedidoId(resultSet.getString("pedido_id"));
                 item.setQty(resultSet.getInt("qty"));
-                Integer productId = resultSet.getInt("producto_id");
+                item.setProducto_id(resultSet.getInt("producto_id")); ;
+
 
                 //Se carga la información de cada producto relacionado con cada item.
-                ProductoDAOImp productoDAOImp = new ProductoDAOImp(DBConnection.getConnection());
-                Producto producto = productoDAOImp.loadProduct(productId);
-//                item.setProducto(producto);
+//                ProductoDAOImp productoDAOImp = new ProductoDAOImp(DBConnection.getConnection());
+//                Producto producto = productoDAOImp.loadProduct(productId);
+//                item.setProducto_id(producto);
+
 
                 //Se carga cada item en salida.
                 salida.add(item);

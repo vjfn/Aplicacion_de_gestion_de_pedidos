@@ -5,10 +5,10 @@ public class Item {
     private Integer id;
     private String pedidoId;
     private Integer qty;
-    private Producto productoId;
+    private Integer productoId;
 
 
-    public Item(Integer id, String pedidoId, Integer qty, Producto productoId) {
+    public Item(Integer id, String pedidoId, Integer qty, Integer productoId) {
         this.id = id;
         this.pedidoId = pedidoId;
         this.qty = qty;
@@ -42,12 +42,12 @@ public class Item {
         this.qty = qty;
     }
 
-    public Producto getProducto_id() {
-        return Item.this.productoId;
+    public Integer getProducto_id() {
+        return this.productoId;
     }
 
-    public void setProducto_id(Producto productoId) {
-        this.productoId = Item.this.productoId;
+    public void setProducto_id(Integer productoId) {
+        this.productoId = productoId;
     }
 
     @Override
@@ -56,7 +56,7 @@ public class Item {
                 "id=" + id +
                 ", pedidoId='" + pedidoId + '\'' +
                 ", qty=" + qty +
-                ", productoId=" + Item.this.productoId +
+                ", productoId=" +this.productoId +
                 '}';
     }
 }

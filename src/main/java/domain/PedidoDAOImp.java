@@ -24,7 +24,7 @@ public class PedidoDAOImp implements PedidoDAO{
         try {
             //Se prepara y ejecuta la consulta.
             PreparedStatement preparedStatement = connection.prepareStatement(queryLoadAll);
-            //ItemDAOImp itemDAOImp = new ItemDAOImp(DBConnection.getConnection());
+            ItemDAOImp itemDAOImp = new ItemDAOImp(DBConnection.getConnection());
             preparedStatement.setInt(1, id);
             ResultSet resultSet = preparedStatement.executeQuery();
 
@@ -41,10 +41,10 @@ public class PedidoDAOImp implements PedidoDAO{
                 pedido.setTotal(resultSet.getInt("total"));
 
                 //Carga los elementos (items) relacionados con el pedido.
-                //pedido.getItems().addAll(itemDAOImp.loadAll(pedido.getCodigo()));
+                pedido.getItems().addAll(itemDAOImp.loadAll(pedido.getId()));
 
                 //Establece el pedido actual en la sesión.
-                //Sesion.setPedido(pedido);
+//              // Sesion.setPedido(pedido);
                 //Se carga cada pedido en salida.
                 salida.add(pedido);
             }

@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class Sesion {
 
-    private static Pedido pedidoActual = null;
+    private static Pedido focusedOrder = null;
     private static Integer pos = null;
     private static Usuario usuario;
     private static Pedido pedido;
@@ -40,5 +40,13 @@ public class Sesion {
 
     public static void setItems(ArrayList<Item> items) {
         Sesion.items = items;
+    }
+
+    public static Pedido getFocusedOrder() {
+        return focusedOrder;
+    }
+
+    public static void setFocusedOrder(Pedido focusedOrder) {
+        Sesion.focusedOrder = focusedOrder;
     }
 }

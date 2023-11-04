@@ -85,14 +85,14 @@ public class DashboardController implements Initializable {
     }
 
     private void seleccionarPedido(Pedido pedido) {
-        //Sesion.setPedidoActual(p);
-        //Sesion.setPos(tvPedidos.getSelectionModel().getSelectedIndex());
-        System.out.println(pedido);
+        Sesion.setFocusedOrder(pedido);
+        Sesion.setItems(pedido.getItems());;
         MainApplication.loadOrderDetail();
     }
 
     @javafx.fxml.FXML
     public void logOut(ActionEvent actionEvent) {
+        MainApplication.returnLogin();
     }
 
 }
