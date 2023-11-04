@@ -1,6 +1,7 @@
 package com.example.aplicacion_de_gestion_de_pedidos;
 
 import clase.Usuario;
+import clase.Sesion;
 import domain.DBConnection;
 import domain.UsuarioDAOImp;
 import javafx.fxml.FXML;
@@ -46,8 +47,11 @@ public class LoginController implements Initializable {
         UsuarioDAOImp usuarioLogin = new UsuarioDAOImp(DBConnection.getConnection());
         try{
             Usuario usuario = usuarioLogin.loadUser(userMail,userPassword);
+            Sesion.setUsuario(usuario);
 
-            throw new RuntimeException("ÉXITO");
+            System.out.println("Exito al Logear");
+
+            MainApplication.loadDahsboard();
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
@@ -62,8 +66,10 @@ public class LoginController implements Initializable {
 
         try{
             Usuario usuario = usuarioRegister.createUser(userMail,userPassword);
+            Sesion.setUsuario(usuario);
 
-            throw new RuntimeException("ÉXITO CREADO");
+            System.out.println("Exito al registro");
+            MainApplication.loadDahsboard();
         } catch (Exception e) {
             throw new RuntimeException(e);
         }

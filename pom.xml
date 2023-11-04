@@ -67,7 +67,7 @@
                         <id>default-cli</id>
                         <configuration>
                             <mainClass>
-                                com.example.aplicacion_de_gestion_de_pedidos/com.example.aplicacion_de_gestion_de_pedidos.HelloApplication
+                                com.example.aplicacion_de_gestion_de_pedidos/com.example.aplicacion_de_gestion_de_pedidos.MainApplication
                             </mainClass>
                             <launcher>app</launcher>
                             <jlinkZipName>app</jlinkZipName>
