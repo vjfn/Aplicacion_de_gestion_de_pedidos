@@ -92,8 +92,6 @@ public class DashboardController implements Initializable {
     }
 
     @javafx.fxml.FXML
-    public void logOut(ActionEvent actionEvent) {
-        MainApplication.returnLogin();
-    }
+    public void logOut(ActionEvent actionEvent) { MainApplication.returnLogin(); }
 
 }

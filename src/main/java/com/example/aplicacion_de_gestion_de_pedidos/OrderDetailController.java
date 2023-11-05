@@ -11,6 +11,7 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+import javafx.scene.control.MenuItem;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 
@@ -37,11 +38,16 @@ public class OrderDetailController implements Initializable
     private Button btnReturn;
     @javafx.fxml.FXML
     private ObservableList<Item> observableListItem;
+    @javafx.fxml.FXML
+    private MenuItem btnLogOut;
 
     @javafx.fxml.FXML
     public void returnAction(ActionEvent actionEvent) {
         MainApplication.loadDahsboard();
     }
+
+    @javafx.fxml.FXML
+    public void logOut(ActionEvent actionEvent) { MainApplication.returnLogin(); }
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
