@@ -1,5 +1,9 @@
 package clase;
 
+/**
+ * La clase Producto los productos que pueden ser solicitados por el usuario, el nombre del producto,
+ * su precio y su cantidad
+ */
 public class Producto {
 
     private Integer id;

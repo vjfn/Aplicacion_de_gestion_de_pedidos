@@ -1,5 +1,8 @@
 package clase;
 
+/**
+ * La clase Item es un elemento de un pedido que contiene información sobre el pedido, el producto y la cantidad.
+ */
 public class Item {
 
     private Integer id;

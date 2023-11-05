@@ -4,6 +4,10 @@ import clase.Producto;
 
 import java.sql.Connection;
 
+/**
+ * Implementación de la interfaz ProductoDAO que proporciona métodos para cargar elementos (producto) relacionados
+ * desde una base de datos.
+ */
 public class ProductoDAOImp implements ProductoDAO {
 
     private static Connection connection;

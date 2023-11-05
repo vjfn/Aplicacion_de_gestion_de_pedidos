@@ -2,6 +2,10 @@ package clase;
 
 import java.util.ArrayList;
 
+/**
+ * La clase Pedido contiene la solicitud de productos realizada por un usuario, la fecha de la misma
+ * el codigo de los productos, el usuario que realizó el pedido y el total.
+ */
 public class Pedido {
 
     private Integer id;

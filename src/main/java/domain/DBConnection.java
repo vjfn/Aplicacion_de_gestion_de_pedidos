@@ -8,6 +8,9 @@ import java.sql.SQLException;
 import java.util.Properties;
 import java.util.logging.Logger;
 
+/**
+ * Esta clase contiene la conexión a la base de datos.
+ */
 public class DBConnection {
     private static Connection connection;
     private static Logger logger;

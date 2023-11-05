@@ -17,7 +17,9 @@ import java.net.URL;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
 
-
+/**
+ * La clase LoginController controla la lógica de la ventana de Login.
+ */
 public class LoginController implements Initializable {
 
     @FXML

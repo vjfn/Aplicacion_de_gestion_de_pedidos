@@ -9,6 +9,10 @@ import java.sql.SQLException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 
+/**
+ * Implementación de la interfaz PedidoDAO que proporciona métodos para cargar elementos (pedidos) relacionados
+ * con el usuario desde una base de datos.
+ */
 public class PedidoDAOImp implements PedidoDAO{
 
     private static Connection connection;

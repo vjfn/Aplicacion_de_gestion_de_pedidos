@@ -18,6 +18,9 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
 
+/**
+ * La clase OrderDetailControler controla la lógica de la ventana del pedido seleccionado.
+ */
 public class OrderDetailController implements Initializable
 {
     @javafx.fxml.FXML

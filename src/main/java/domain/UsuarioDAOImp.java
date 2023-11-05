@@ -1,6 +1,7 @@
 package domain;
 
 import clase.Usuario;
+import javafx.scene.control.Alert;
 
 import java.sql.*;
 
@@ -49,7 +50,12 @@ public class UsuarioDAOImp implements UsuarioDAO{
             ResultSet loadedUser = pS.executeQuery();
 
             if (loadedUser.next()) {
-                throw new RuntimeException("Usuario existe.");
+                Alert alert = new Alert(Alert.AlertType.WARNING);
+                alert.setTitle("Error de registro");
+                alert.setHeaderText("El usuario existe");
+                alert.setContentText("Pruebe con otro correo electronico.");
+                alert.showAndWait();
+                throw new RuntimeException("El usuario ya existe en la base de datos.");
             }
 
             PreparedStatement pSNewUser = connection.prepareStatement(createUserSQL, Statement.RETURN_GENERATED_KEYS);

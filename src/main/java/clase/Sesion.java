@@ -2,10 +2,12 @@ package clase;
 
 import java.util.ArrayList;
 
+/**
+ * Almacena toda la información sobre la sesión actual del usuario.
+ */
 public class Sesion {
 
     private static Pedido focusedOrder = null;
-    private static Integer pos = null;
     private static Usuario usuario;
     private static Pedido pedido;
 

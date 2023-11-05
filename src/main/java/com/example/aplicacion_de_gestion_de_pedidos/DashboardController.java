@@ -21,6 +21,9 @@ import java.net.URL;
 import java.sql.Connection;
 import java.util.ResourceBundle;
 
+/**
+ * La clase DashboardController controla la lógica de la ventana de pedidos.
+ */
 public class DashboardController implements Initializable {
 
 

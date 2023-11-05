@@ -2,6 +2,9 @@ package clase;
 
 import java.util.ArrayList;
 
+/**
+ * Contiene la información  del usuario, su ID, nombre, contraseña, mail y un arraylist de sus pedidos.
+ */
 public class Usuario {
 
     private Integer id;

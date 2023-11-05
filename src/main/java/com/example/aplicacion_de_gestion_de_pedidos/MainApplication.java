@@ -7,6 +7,10 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
+/**
+ * La clase MainApplication es la clase principal de la aplicación JavaFX.
+ * Proporciona métodos para cargar diferentes archivos FXML y cambiar las escenas.
+ */
 public class MainApplication extends Application {
 
     private static Stage myStage;

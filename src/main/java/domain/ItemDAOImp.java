@@ -9,6 +9,10 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
+/**
+ * Implementación de la interfaz ItemDAO que proporciona métodos para cargar elementos (items) relacionados
+ * con sus pedidos desde una base de datos.
+ */
 public class ItemDAOImp implements ItemDAO{
 
     private static Connection connection;
