@@ -9,13 +9,13 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox stylesheets="@style.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.aplicacion_de_gestion_de_pedidos.OrderDetailController">
+<VBox alignment="TOP_CENTER" styleClass="login-background" stylesheets="@style.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.aplicacion_de_gestion_de_pedidos.OrderDetailController">
     <children>
         <BorderPane id="contenedor" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0">
             <top>
                 <Label id="labelPedidos" text="Detalles del pedido:" BorderPane.alignment="CENTER">
                     <font>
-                        <Font size="18.0" />
+                        <Font name="System Bold" size="18.0" />
                     </font>
                     <opaqueInsets>
                         <Insets />
@@ -40,7 +40,7 @@
                         <Insets />
                     </opaqueInsets>
                     <BorderPane.margin>
-                        <Insets bottom="10.0" left="10.0" right="10.0" />
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                     </BorderPane.margin>
                 </TableView>
             </center>

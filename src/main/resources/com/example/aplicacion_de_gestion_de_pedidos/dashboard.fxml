@@ -16,14 +16,14 @@
     <children>
         <MenuBar id="menuBar">
             <menus>
-                <Menu id="menuText" mnemonicParsing="false" styleClass=".label" text="Opciones">
+                <Menu id="menuText" mnemonicParsing="false" styleClass=".label" text="File">
                     <items>
                         <MenuItem id="menuItem" fx:id="btnLogOut" mnemonicParsing="false" onAction="#logOut" text="Log Out" />
                     </items>
                 </Menu>
             </menus>
         </MenuBar>
-        <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="602.0" prefWidth="857.0">
+        <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="602.0" prefWidth="857.0" styleClass="login-background">
             <top>
                 <HBox alignment="CENTER" prefHeight="53.0" prefWidth="857.0" stylesheets="@style.css" BorderPane.alignment="CENTER">
                     <children>
@@ -46,10 +46,10 @@
                                 <Insets bottom="10.0" />
                             </VBox.margin>
                             <font>
-                                <Font size="18.0" />
+                                <Font name="System Bold" size="18.0" />
                             </font>
                         </Label>
-                        <TableView fx:id="ordersTable" prefHeight="465.0" prefWidth="810.0" stylesheets="@style.css">
+                        <TableView fx:id="ordersTable" prefHeight="465.0" prefWidth="810.0" styleClass="table-striped" stylesheets="@style.css">
                             <columns>
                                 <TableColumn fx:id="orderId" prefWidth="75.0" text="ID" />
                                 <TableColumn fx:id="orderCodigo" prefWidth="75.0" text="Código de pedido" />

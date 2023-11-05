@@ -27,8 +27,6 @@ public class DashboardController implements Initializable {
     @javafx.fxml.FXML
     private MenuItem btnLogOut;
     @javafx.fxml.FXML
-    private MenuItem btnAcercaDe;
-    @javafx.fxml.FXML
     private Label labelNombreUsuario;
     private ObservableList<Pedido> observablePedidos;
     @javafx.fxml.FXML

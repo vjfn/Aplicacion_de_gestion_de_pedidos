@@ -12,19 +12,20 @@
 <?import javafx.scene.paint.Color?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane id="contenedor" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.aplicacion_de_gestion_de_pedidos.LoginController">
+<BorderPane id="login-background" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" styleClass="login-background" stylesheets="@style.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.aplicacion_de_gestion_de_pedidos.LoginController">
     <center>
         <VBox id="#contenedorLogin" alignment="CENTER" BorderPane.alignment="CENTER">
             <children>
                 <HBox alignment="CENTER">
                     <children>
-                        <Label id="labelBienvenida" alignment="CENTER" text="Bienvenido!">
+                        <Label id="labelBienvenida" alignment="CENTER" text="Iniciar Sesión">
                      <HBox.margin>
                         <Insets bottom="20.0" />
                      </HBox.margin>
                      <font>
-                        <Font size="14.0" />
-                     </font></Label>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Label>
                     </children>
                 </HBox>
                 <Label id="loginUser" text="Correo">
@@ -93,15 +94,18 @@
             <Label text="Correo">
                <font>
                   <Font size="14.0" />
-               </font></Label>
+               </font>
+            </Label>
             <TextField fx:id="registerUserField" prefHeight="25.0" prefWidth="181.0">
                <opaqueInsets>
                   <Insets bottom="20.0" left="10.0" right="10.0" />
-               </opaqueInsets></TextField>
+               </opaqueInsets>
+            </TextField>
             <Label text="Contraseña">
                <font>
                   <Font size="14.0" />
-               </font></Label>
+               </font>
+            </Label>
             <PasswordField fx:id="registerPasswordField" />
             <Button fx:id="btnRegister" mnemonicParsing="false" onAction="#register" text="Registrarse!" />
          </children>
